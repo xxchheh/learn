@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+  <display-name>Archetype Created Web Application</display-name>
+
+<!--  定义访问的首页，一般是静态资源，多个时按定义顺序查找-->
+<!--  值实际上可以是对应的servlet的路径-->
+<!--  先查找静态资源（如 HTML/JS/CSS），再查找 Servlet 映射路径。
+若项目中存在名为 Include.html 的静态文件，但实际目标是 Servlet，则容器会优先加载静态文件，导致 Servlet 未被调用。-->
+  <welcome-file-list>
+<!--    利用WebServlet设置的servlet在当前元素设置下会失效,好像也不是这个原因，可能是抽风。。。-->
+    <welcome-file>Include</welcome-file>
+<!--    <welcome-file>login.html</welcome-file>-->
+  </welcome-file-list>
+
+
+  <!--  当前整个web应用保持一个ServletContext，配置整个web应用的初始化信息-->
+  <context-param>
+    <param-name>creater</param-name>
+    <param-value>xxchheh</param-value>
+  </context-param>
+  <context-param>
+    <param-name>create_time</param-name>
+    <param-value>2025-05-17</param-value>
+  </context-param>
+
+
+  <!--web.xml中配置web核心应用-->
+  <!--    注册servlet-->
+  <servlet>
+<!--    name用于与mapping对应-->
+    <servlet-name>helloServlet</servlet-name>
+    <servlet-class>com.xxc.servlet.HelloServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+<!--    当前servlet初始化信息，在servlet实现类中使用servletconfig接口servletConfig.getInitParameter方法获取定义的对应的参数-->
+    <init-param>
+      <param-name>Encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </servlet>
+  <!--    一个servlet对应一个Mapping映射-->
+  <servlet-mapping>
+    <servlet-name>helloServlet</servlet-name>
+    <!--    请求路径-->
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>responseStream</servlet-name>
+    <servlet-class>com.xxc.http.response.PrintServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>responseStream</servlet-name>
+    <url-pattern>/response</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>refresh</servlet-name>
+    <servlet-class>com.xxc.http.response.RefreshServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>refresh</servlet-name>
+    <url-pattern>/refresh</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>login</servlet-name>
+    <servlet-class>com.xxc.http.response.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestInfoServlet</servlet-name>
+    <servlet-class>com.xxc.http.request.RequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestInfoServlet</servlet-name>
+    <url-pattern>/request</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DownManagerServlet</servlet-name>
+    <servlet-class>com.xxc.http.request.DownManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownManagerServlet</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>RequestParamServlet</servlet-name>
+    <servlet-class>com.xxc.http.request.RequestParamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestParamServlet</servlet-name>
+    <url-pattern>/requestparam</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RequestIncludeServlet</servlet-name>
+    <servlet-class>com.xxc.http.dispatch.RequestIncludeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestIncludeServlet</servlet-name>
+    <url-pattern>/Include</url-pattern>
+  </servlet-mapping>
+
+</web-app>
