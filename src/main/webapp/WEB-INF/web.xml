@@ -7,14 +7,14 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
-<!--  定义访问的首页，一般是静态资源，多个时按定义顺序查找-->
-<!--  值实际上可以是对应的servlet的路径-->
-<!--  先查找静态资源（如 HTML/JS/CSS），再查找 Servlet 映射路径。
-若项目中存在名为 Include.html 的静态文件，但实际目标是 Servlet，则容器会优先加载静态文件，导致 Servlet 未被调用。-->
+  <!--  定义访问的首页，一般是静态资源，多个时按定义顺序查找-->
+  <!--  值实际上可以是对应的servlet的路径-->
+  <!--  先查找静态资源（如 HTML/JS/CSS），再查找 Servlet 映射路径。
+  若项目中存在名为 Include.html 的静态文件，但实际目标是 Servlet，则容器会优先加载静态文件，导致 Servlet 未被调用。-->
   <welcome-file-list>
-<!--    利用WebServlet设置的servlet在当前元素设置下会失效,好像也不是这个原因，可能是抽风。。。-->
+    <!--    利用WebServlet设置的servlet在当前元素设置下会失效,好像也不是这个原因，可能是抽风。。。-->
     <welcome-file>Include</welcome-file>
-<!--    <welcome-file>login.html</welcome-file>-->
+    <!--    <welcome-file>login.html</welcome-file>-->
   </welcome-file-list>
 
 
@@ -32,11 +32,11 @@
   <!--web.xml中配置web核心应用-->
   <!--    注册servlet-->
   <servlet>
-<!--    name用于与mapping对应-->
+    <!--    name用于与mapping对应-->
     <servlet-name>helloServlet</servlet-name>
     <servlet-class>com.xxc.servlet.HelloServlet</servlet-class>
     <load-on-startup>3</load-on-startup>
-<!--    当前servlet初始化信息，在servlet实现类中使用servletconfig接口servletConfig.getInitParameter方法获取定义的对应的参数-->
+    <!--    当前servlet初始化信息，在servlet实现类中使用servletconfig接口servletConfig.getInitParameter方法获取定义的对应的参数-->
     <init-param>
       <param-name>Encoding</param-name>
       <param-value>UTF-8</param-value>
@@ -66,7 +66,7 @@
     <servlet-name>refresh</servlet-name>
     <url-pattern>/refresh</url-pattern>
   </servlet-mapping>
-  
+
   <servlet>
     <servlet-name>login</servlet-name>
     <servlet-class>com.xxc.http.response.LoginServlet</servlet-class>
@@ -113,4 +113,12 @@
     <url-pattern>/Include</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>myservlet</servlet-name>
+    <servlet-class>com.xxc.filter.easyfilter.Myservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>myservlet</servlet-name>
+    <url-pattern>/myservlet</url-pattern>
+  </servlet-mapping>
 </web-app>
