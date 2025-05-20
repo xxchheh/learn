@@ -132,6 +132,16 @@
     <url-pattern>/lastservlet</url-pattern>
   </servlet-mapping>
 
+<!--  filter与servlet顺序是否有影响-->
+  <filter>
+    <filter-name>filter03</filter-name>
+    <filter-class>com.xxc.filter.chainfilter.filter03</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filter03</filter-name>
+    <url-pattern>/lastservlet</url-pattern>
+  </filter-mapping>
+
   <filter>
     <filter-name>filter01</filter-name>
     <filter-class>com.xxc.filter.chainfilter.filter01</filter-class>
