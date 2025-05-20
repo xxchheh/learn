@@ -19,3 +19,5 @@ bin-release/
 # information for Eclipse / Flash Builder.
 /.idea/compiler.xml
 /.idea/
+
+./target
