@@ -121,4 +121,32 @@
     <servlet-name>myservlet</servlet-name>
     <url-pattern>/myservlet</url-pattern>
   </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>lastservlet</servlet-name>
+    <servlet-class>com.xxc.filter.chainfilter.lastservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>lastservlet</servlet-name>
+    <url-pattern>/lastservlet</url-pattern>
+  </servlet-mapping>
+
+  <filter>
+    <filter-name>filter01</filter-name>
+    <filter-class>com.xxc.filter.chainfilter.filter01</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filter01</filter-name>
+    <url-pattern>/lastservlet</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>filter02</filter-name>
+    <filter-class>com.xxc.filter.chainfilter.filter02</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filter02</filter-name>
+    <url-pattern>/lastservlet</url-pattern>
+  </filter-mapping>
 </web-app>
