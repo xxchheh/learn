@@ -71,24 +71,24 @@
         </div>
         <div class="flex flex-wrap items-center gap-4">
             <div class="flex items-center space-x-2">
-                <input type="radio" id="month" name="autologin" value="一个月" class="accent-primary"
-                    <%= "一个月".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
-                <label for="month" class="text-sm text-gray-700">一个月</label>
+                <input type="radio" id="month" name="autologin" value="One Month" class="accent-primary"
+                    <%= "One Month".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
+                <label for="month" class="text-sm text-gray-700">One Month</label>
             </div>
             <div class="flex items-center space-x-2">
-                <input type="radio" id="quarter" name="autologin" value="三个月" class="accent-primary"
-                    <%= "三个月".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
-                <label for="quarter" class="text-sm text-gray-700">三个月</label>
+                <input type="radio" id="quarter" name="autologin" value="Three Months" class="accent-primary"
+                    <%= "Three Months".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
+                <label for="quarter" class="text-sm text-gray-700">Three Months</label>
             </div>
             <div class="flex items-center space-x-2">
-                <input type="radio" id="halfyear" name="autologin" value="半年" class="accent-primary"
-                    <%= "半年".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
-                <label for="halfyear" class="text-sm text-gray-700">半年</label>
+                <input type="radio" id="halfyear" name="autologin" value="Six Months" class="accent-primary"
+                    <%= "Six Months".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
+                <label for="halfyear" class="text-sm text-gray-700">Six Months</label>
             </div>
             <div class="flex items-center space-x-2">
-                <input type="radio" id="year" name="autologin" value="一年" class="accent-primary"
-                    <%= request.getAttribute("autologin") == null || "一年".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
-                <label for="year" class="text-sm text-gray-700">一年</label>
+                <input type="radio" id="year" name="autologin" value="One Year" class="accent-primary"
+                    <%= request.getAttribute("autologin") == null || "One Year".equals(request.getAttribute("autologin")) ? "checked" : "" %>>
+                <label for="year" class="text-sm text-gray-700">One Year</label>
             </div>
         </div>
         <div class="pt-2">

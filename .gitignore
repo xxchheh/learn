@@ -21,5 +21,9 @@ bin-release/
 /.idea/compiler.xml
 /.idea/
 
-./target
 
+!/target/
+!/target/kuangshen/
+!/target/classes/
+!/target/generated-sources/
+!/target/kuangshen.war
