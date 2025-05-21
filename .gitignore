@@ -24,6 +24,6 @@ bin-release/
 
 !/target/
 !/target/kuangshen/
-!/target/classes/
+
 !/target/generated-sources/
 !/target/kuangshen.war
