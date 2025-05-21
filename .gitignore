@@ -3,6 +3,7 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+traget/
 
 # Other files and folders
 .settings/
@@ -21,9 +22,3 @@ bin-release/
 /.idea/compiler.xml
 /.idea/
 
-
-!/target/
-!/target/kuangshen/
-!/target/classes/
-!/target/generated-sources/
-!/target/kuangshen.war
